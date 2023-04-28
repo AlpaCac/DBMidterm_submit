@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://mysql.buaa.seekthought.com:3306/db_21373067?serverTimezone=UTC
+      username: 21373067
+      password: 21373067
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
