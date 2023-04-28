@@ -1,7 +1,9 @@
 package com.example.dbmidterm.controller;
 
 import com.example.dbmidterm.dao.EmployeeDao;
+import com.example.dbmidterm.pojo.DeptManager;
 import com.example.dbmidterm.pojo.Employee;
+import com.example.dbmidterm.pojo.pojolist.EmployeeList;
 import com.example.dbmidterm.service.EmployeeService;
 import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,20 +18,24 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping
-    public void add(@RequestBody List<Employee> employees){
-        for(Employee employee : employees) {
+    public Employee add(@RequestBody EmployeeList employees){
+        List<Employee> rows = employees.getRows();
+        for(Employee employee : rows) {
             employeeService.add(employee);
         }
+        return null;
     }
 
     @PutMapping
-    public void update(@RequestBody Employee employee){
+    public Employee update(@RequestBody Employee employee){
         employeeService.update(employee);
+        return null;
     }
 
     @DeleteMapping
-    public void remove(@RequestParam Integer empNo){
+    public Employee remove(@RequestParam Integer empNo){
         employeeService.remove(empNo);
+        return null;
     }
 
     @GetMapping(params = "empNo")

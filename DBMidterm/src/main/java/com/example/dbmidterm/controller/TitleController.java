@@ -1,7 +1,9 @@
 package com.example.dbmidterm.controller;
 
 import com.example.dbmidterm.dao.TitleDao;
+import com.example.dbmidterm.pojo.Employee;
 import com.example.dbmidterm.pojo.Title;
+import com.example.dbmidterm.pojo.pojolist.TitleList;
 import com.example.dbmidterm.service.TitleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,20 +18,24 @@ public class TitleController {
     private TitleService titleService;
 
     @PostMapping
-    public void add(@RequestBody List<Title> titles){
-        for(Title title : titles) {
+    public Title add(@RequestBody TitleList titles){
+        List<Title> rows = titles.getRows();
+        for(Title title : rows) {
             titleService.add(title);
         }
+        return null;
     }
 
     @PutMapping
-    public void update(@RequestBody Title title){
+    public Title update(@RequestBody Title title){
         titleService.update(title);
+        return null;
     }
 
     @DeleteMapping
-    public void remove(@RequestParam Integer empNo,@RequestParam  String title, @RequestParam LocalDate fromDate){
+    public Title remove(@RequestParam Integer empNo,@RequestParam  String title, @RequestParam LocalDate fromDate){
         titleService.remove(empNo, title, fromDate);
+        return null;
     }
 
     @GetMapping

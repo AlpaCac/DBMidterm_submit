@@ -1,6 +1,8 @@
 package com.example.dbmidterm.controller;
 
 import com.example.dbmidterm.pojo.Department;
+import com.example.dbmidterm.pojo.pojolist.DepartmentList;
+import com.example.dbmidterm.pojo.pojolist.DeptManagerList;
 import com.example.dbmidterm.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,20 +16,24 @@ public class DepartmentController {
     private DepartmentService departmentService;
 
     @PostMapping
-    public void add(@RequestBody List<Department> departments){
-        for(Department department : departments){
+    public Department add(@RequestBody DepartmentList departments){
+        List<Department> rows = departments.getRows();
+        for(Department department : rows){
             departmentService.add(department);
         }
+        return null;
     }
 
     @PutMapping
-    public void update(@RequestBody Department department){
+    public Department update(@RequestBody Department department){
         departmentService.update(department);
+        return null;
     }
 
     @DeleteMapping
-    public void remove(@RequestParam String deptNo){
+    public Department remove(@RequestParam String deptNo){
         departmentService.remove(deptNo);
+        return null;
     }
 
     @GetMapping
