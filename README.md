@@ -37,8 +37,8 @@ body示例：
 ```
 {
         "rows":[
-        	{"deptNo": "0001","deptName": "0001name"},
-        	{"deptNo": "0002","deptName": "0002name"}
+        	{"deptNo": "d001","deptName": "0001name"},
+        	{"deptNo": "d002","deptName": "0002name"}
         ]
 }
 ```
@@ -73,13 +73,13 @@ body示例：
         "rows":[
         	{
         		"empNo": 10001,
-        		"deptNo": "d005",
+        		"deptNo": "d001",
        			"fromDate": "1986-06-26",
         		"toDate": "9999-01-01"
     		},
         	{
         		"empNo": 10002,
-        		"deptNo": "d004",
+        		"deptNo": "d002",
        			"fromDate": "1986-06-26",
         		"toDate": "9999-01-01"
     		}
@@ -94,7 +94,7 @@ body示例：
 ```
 {
   "empNo": 10001,
-  "deptNo": "d005",
+  "deptNo": "d001",
   "fromDate": "1986-06-26",
   "toDate": "8888-01-01"
 }
@@ -118,14 +118,14 @@ body示例：
 {
         "rows":[
         	{
-    			"empNo": 10004,
+    			"empNo": 10001,
     			"deptNo": "d002",
     			"fromDate": "1985-01-01",
     			"toDate": "9999-01-01"
-			},
+		},
         	{
-        		"empNo": 10001,
-    			"deptNo": "d003",
+        		"empNo": 10002,
+    			"deptNo": "d001",
     			"fromDate": "1985-01-01",
     			"toDate": "9999-01-01"
     		}
@@ -139,10 +139,10 @@ body示例：
 
 ```
 {
-	"empNo": 10004,
+	"empNo": 10001,
 	"deptNo": "d002",
 	"fromDate": "1985-01-01",
-	"toDate": "9999-01-01"
+	"toDate": "8888-01-01"
 }
 ```
 
@@ -163,21 +163,21 @@ body示例：
 ```
 {
         "rows":[
+       		{
+		    "empNo": 10001,
+		    "birthDate": "1953-09-02",
+		    "firstName": "Georgi",
+		    "hireDate": "1986-06-26",
+		    "gender": "M",
+		    "lastName": "Facello"
+		},
         	{
-  				"empNo": 0,
-  				"birthDate": "string",
-  				"firstName": "string",
-  				"lastName": "string",
-  				"gender": "string",
-  				"hireDate": "string"
-			},
-        	{
-  				"empNo": 0,
-  				"birthDate": "string",
-  				"firstName": "string",
-  				"lastName": "string",
-  				"gender": "string",
-  				"hireDate": "string"
+		    "empNo": 10002,
+		    "birthDate": "1953-09-02",
+		    "firstName": "Geoegi",
+		    "hireDate": "1986-06-26",
+		    "gender": "F",
+		    "lastName": "Faccllo"
     		}
         ]
 }
@@ -189,12 +189,12 @@ body示例：
 
 ```
 {
-  				"empNo": 0,
-  				"birthDate": "string",
-  				"firstName": "string",
-  				"lastName": "string",
-  				"gender": "string",
-  				"hireDate": "string"
+    "empNo": 10001,
+    "birthDate": "1953-09-02",
+    "firstName": "newGeorgi",
+    "hireDate": "1986-06-26",
+    "gender": "M",
+    "lastName": "Facello"
 }
 ```
 
@@ -241,10 +241,10 @@ body示例：
 
 ```
 {
-    			"empNo": 10001,
-    			"toDate": "9999-01-01",
-    			"fromDate": "1985-01-01",
-    			"title": "title1"
+	"empNo": 10001,
+	"toDate": "8888-01-01",
+	"fromDate": "1985-01-01",
+	"title": "title1"
 }
 ```
 
